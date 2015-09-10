@@ -45,3 +45,85 @@ def zipCodeInfluence:
 	for zip in zipcodes:
 		zipCounts Dict[zip] = zipcodes.count(zip)
 	return zipCountsDict
+	
+def createZipCodeToNeighborhoodDict:
+	#returns dictionary to help user relate chicago neighborhoods with chicago zipcodes
+	zip = dict()
+	zip['hello'] = 'hola'
+	zip['Rogers Park'] = '60626'
+	zip['West Ridge'] = '60645'
+	*zip['Uptown'] = '60640'
+	*zip['Lincoln Square'] = '60625'
+	*zip['North Center'] = '60613'
+	*zip['Lake View'] = '60657'
+	zip['Lincoln Park'] = '60614'
+	zip['Near North Side'] ='60610'
+	zip['Edison Park'] ='60631'
+	zip['Norwood Park'] = '60631'
+	*zip['Jefferson Park'] = '60630'
+	*zip['Forest Glen'] = '60646'
+	*zip['North Park'] = '60659'
+	zip['Albany Park'] = '60625'
+	zip['Portage Park'] = '60641'
+	*zip['Irving Park'] = '60618'
+zip['Dunning'] = '60635'
+zip['Montclaire'] ='
+zip['Belmont Cragin'] = '
+zip['Hermosa'] ='
+zip['Avondale'] = '
+zip['Logan Square'] = '
+zip['Humboldt park'] = '
+zip['West Town'] = '
+zip['Austin'] = '
+zip['West Garfield Park'] = '
+zip['East Garfield Park'] = '
+zip['Near West Side'] = '
+zip['North Lawndale'] =
+zip['South Lawndale'] =
+zip['Lower West Side'] =
+zip['Loop'] =
+zip['Near South Side'] =
+zip['Armour Square'] = 
+zip['Douglas'] =
+zip['Oakland'] =
+zip['Fuller Park'] =
+zip['Grand Boulevard'] =
+zip['Kenwood'] =
+zip['Washington Park'] =
+zip['Hyde Park'] =
+zip['Woodlawn'] =
+zip['South Shore'] =
+zip['Chatham'] =
+zip['Avalon Park'] =
+zip['South Chicago'] =
+zip['Burnside'] =
+zip['Calumet Heights'] =
+zip['Roseland'] =
+zip['Pullman'] =
+zip['South Deering'] =
+zip['East Side'] =
+zip['West Pullman'] =
+zip['Riverdale'] =
+zip['Hegewisch'] =
+zip['Garfield Ridge'] =
+zip['Archer Heights'] =
+zip['Brighton Park'] =
+zip['McKinley Park'] =
+zip['Bridgeport'] =
+zip['New City'] =
+zip['West Elsdon] =
+zip['Gage Park'] =
+zip['Clearing']
+zip['West Lawn'] =
+zip['Chicago Lawn'] =
+zip['West Englewood'] =
+zip['Englewood'] = 
+zip['Greater Grand Crossing'] =
+zip['Ashburn'] =
+zip['Auburn Gresham']
+zip['Beverly'] = 
+zip['Washington Heights'] =
+zip['Mount Greenwood'] =
+zip['Morgan Park'] =
+zip["O'Hare"] =
+zip['Edgewater'] =
