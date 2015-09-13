@@ -20,17 +20,21 @@ for row in csv_f:
 f.close()
 #print zipcodes
 zipCount = zipcodes.count('60612')
-print zipCount
+print "60612 appeared this many times: " + zipCount
 
 
 zipCountsDict = dict()
 
 
+#print the concentration of each condom sites in each zipcodes (how often each zipcode appeared in the csv)
 for zip in zipcodes:
 	zipCountsDict[zip] = zipcodes.count(zip)
 	#print zip , zipcodes.count(zip);
+
+
+
 	
-print zipCountsDict
+##########print zipCountsDict
 #print frequency chart, for zipcode x, the amount of condom distribution sites are x, y, z
 #these neighborhoods correlate with neighborhoods x, y, and z
 
@@ -38,8 +42,26 @@ print zipCountsDict
 #the neighborhoods with the highest reported teen birth rates are x, y and z
 
 
+
+
+#notes: find top 5 diseased neighborhoods by putting into list and sorting, then put those
+#neighborhoods into the dictionaries to find the most highly diseased area, then cross check that with
+#best covered areas for condom sites.
+
 #returns a dictionary of the zipcodes of condom sites linked to the # of sites in the zipcode
 
+def clinicCount():
+	#returns a list of zipcodes that have clinics available.
+	clinics = open("clinics.csv")
+	csv_clinics = csv.reader(clinics) #csv reader object
+	clinicZipcodes = []
+	
+	for row in csv_clinics:
+		clinicZipcodes.append(row[5])
+		print row[5]
+	clinics.close()
+	return clinicZipcodes
+	
 def zipCodeInfluence():
 	zipCountsDict = dict()
 	for zip in zipcodes:
@@ -47,8 +69,6 @@ def zipCodeInfluence():
 	return zipCountsDict
 	
 	
-
-#could create a set of zipcodes based on the condom data, then use those as the key, but might be too complex...
 	
 def createZipCodeToNeighborhoodDict():
 	#returns dictionary to help user relate chicago neighborhoods with chicago zipcodes
