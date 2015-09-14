@@ -1,21 +1,14 @@
 import csv
-
-print "this program counts the amount of cases of chlamydia"
+#adddddd this!
+#this program finds the 5 highest amount of cases of chlamydia per neighborhood"
 
 f = open("disease1.csv")
 
 csv_f = csv.reader(f) #csv reader object/list
 
 diseases = []
-#zipcodes.append(row[5])
-#print zipcodes
-#print len(zipcodes)
-#zipcodes1 = set(zipcodes1)
-#zipcodes2 = set(zipcodes2)
-#print zipcodes2.intersection(zipcodes1)
 
-
-#skip over first rrow
+#skip over first row to avoid parsing errors, headers not needed really
 csv_f.next()
 
 #loop over every row and pull the zipcode from the dataset, compile into one list.
@@ -42,7 +35,14 @@ print diseases[3]
 print diseases[4]
 
 
-#create 
+
+#################################################################
+
+
+#create dictionary of each transmission rate associated with each neighborhood.
+#the transmission rate will serve as the key in the hash map, and the neighbohoor will be the value
+
+
 
 
 
