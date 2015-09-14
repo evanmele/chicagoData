@@ -1,16 +1,5 @@
 import csv
 
-
-##########print zipCountsDict
-#print frequency chart, for zipcode x, the amount of condom distribution sites are x, y, z
-#these neighborhoods correlate with neighborhoods x, y, and z
-
-#the neighborhoods with the highest reported chlamydia rates are x, y and z
-#the neighborhoods with the highest reported teen birth rates are x, y and z
-
-
-
-
 #notes: find top 5 diseased neighborhoods by putting into list and sorting, then put those
 #neighborhoods into the dictionaries to find the most highly diseased area, then cross check that with
 #best covered areas for condom sites.
@@ -105,7 +94,7 @@ def createTransmissionDict():
 def createZipCodeToNeighborhoodDict():
 	#returns dictionary to help user relate chicago neighborhoods with chicago zipcodes
 	zip = dict()
-	zip['hello'] = 'hola'
+	
 	zip['Rogers Park'] = '60626'
 	zip['West Ridge'] = '60645'
 	zip['Uptown'] = '60640'
