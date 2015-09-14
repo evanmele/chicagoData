@@ -1,8 +1,6 @@
 import csv
+import numpy as np
 
-#notes: find top 5 diseased neighborhoods by putting into list and sorting, then put those
-#neighborhoods into the dictionaries to find the most highly diseased area, then cross check that with
-#best covered areas for condom sites.
 
 #returns a dictionary that counts the number of condom distribution sites that are available in each the zipcode	
 def zipCodeInfluence():
@@ -23,6 +21,28 @@ def zipCodeInfluence():
 		zipCountsDict[zip] = zipcodes.count(zip)
 	return zipCountsDict
 	
+#return list of the zipcodes with the most condom distribution sites available
+def zipCodeMax():
+	f = open("condoms.csv")
+	csv_f = csv.reader(f)
+	zipcodes = []
+	zipcounts = []
+
+	for row in csv_f:
+		zipcodes.append(row[5])
+		
+	f.close()
+	
+	for zip in zipcodes:
+		zipcounts.append(zipcodes.count(zip))
+	
+	#sort from highest to lowest
+	zipcounts.sort()
+	zipcounts.reverse()
+	
+	return zipcounts
+
+
 
 #returns a dictionary of the zipcodes of condom sites linked to the # of sites in the zipcode
 
@@ -54,25 +74,15 @@ def diseaseCount():
 			infectionAmount = float(row[55])
 			#add the float to the list
 			diseases.append(infectionAmount)
-			print row[55] + '\n'
+			
 	f.close() ##close file
 	#sort diseases from lowest to highest
 	diseases.sort()
 	#reverse to get highest to lowest
 	diseases.reverse()
-	#print the top 5
-	print "The most cases reported in 2013 by neighbhorhood were " + "\n" 
-	print diseases[0]
-	print diseases[1]
-	print diseases[2]
-	print diseases[3]
-	print diseases[4]
 	
 	return diseases #returns list of diseases sorted highest to lowest
 
-
-
-	
 #returns dictionary that holds the hashmap between transmission rates and the neighborhood they belong to
 def createTransmissionDict():
 	#create dictionary
@@ -183,7 +193,15 @@ def main():
 	
 	print "The zipcodes and the amount of condom distribution sites are as follows:" + "\n"
 	print zipCodeCount
-	#zipcodes with the most sites are....?
+	
+	#load zipcodemax counts
+	maxZips = zipCodeMax()
+	print "the most condom distribution sites available in any given zipcode was..."
+	print maxZips[0]
+	print "while the least amount of condom distribution sites available in any given zipcode was.."
+	print maxZips[len(maxZips)-1]
+	print "the average amount of condom distrubtion sites availbable per zipcode is.."
+	print np.mean(maxZips)
 	
 	print "The zipcodes that have STI clinics available are " "\n"
 	clinics = clinicCount()
@@ -194,7 +212,6 @@ def main():
 	transmissionsToNeighborhoods = createTransmissionDict()
 	#load list of transmissions
 	transmissionCount = diseaseCount()
-	print transmissionCount
 	
 	#display the most infected neighborhoods and their respective zip codes.
 	print "the top 5 most infected neighborhoods are..." + "\n"
@@ -214,6 +231,8 @@ def main():
 	#check to see how many condom distribution sites are available in these zipcodes!
 	print "the amount of condom distribution sites present in these neighborhoods are as follows..."
 	print zipCodeCount[zip1], zipCodeCount[zip2], zipCodeCount[zip3], zipCodeCount[zip4], zipCodeCount[zip5]
+	
+	
 	
 	
 	

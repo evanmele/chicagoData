@@ -34,6 +34,12 @@ class DataTests(unittest.TestCase):
 		self.assertEquals(dict[7844.7], 'East Garfield Park')
 		self.assertEquals(dict[7765.5], 'West Englewood')
 	
+	#test to see if full range of zipcode influence made it into the list
+	def test_zipcounts(self):
+		lst = data.zipCodeMax()
+		self.assertEquals(lst[0], 11)
+		self.assertEquals(lst[len(lst)-1], 1)
+	
 	
 	
 	if __name__ == '__main__':
